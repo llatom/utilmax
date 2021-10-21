@@ -1,4 +1,4 @@
-![logo](https://cderek.github.io/tenon/assets/logo.png)
+![logo](https://raw.githubusercontent.com/cderek/tenon/master/assets/logo.png)
 
 ## Overview
 
