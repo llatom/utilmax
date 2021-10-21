@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/cderek/tenon/master/assets/logo.png)
+<center>![logo](https://raw.githubusercontent.com/cderek/tenon/master/assets/logo.png)</center>
 
 ## Overview
 
@@ -10,4 +10,3 @@ npm install tenon --save
 ...
 import tenon from 'tenon';
 ```
-
