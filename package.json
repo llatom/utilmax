@@ -1,11 +1,14 @@
 {
-  "name": "tenon",
+  "name": "@cderek/tenon",
   "version": "1.0.0",
   "description": "tenon is a small and useful utils library for JavaScript 🦑",
   "main": "index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "doc": "jsdoc -c jsdoc.json",
-    "build": "esbuild lib/index.js --bundle --minify --sourcemap --outfile=public/tenon.js",
+    "build": "rimraf lib && node ./build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,9 +29,12 @@
   },
   "homepage": "https://github.com/cderek/tenon#readme",
   "devDependencies": {
+    "@types/node": "^16.11.4",
     "clean-jsdoc-theme": "^3.2.8",
     "docdash": "^1.2.0",
     "esbuild": "^0.13.8",
-    "jsdoc": "^3.6.7"
+    "html-minifier-terser": "^6.0.2",
+    "jsdoc": "^3.6.7",
+    "rimraf": "^3.0.2"
   }
 }

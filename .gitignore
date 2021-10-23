@@ -1,11 +1,9 @@
-DS_Store
-docs/
-node_modules/
-example/
-.*.swp
 .DS_Store
-.git
-.hg
-.npmrc
-npm-debug.log/node_modules
-package-lock.json
+node_modules
+/docs
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
