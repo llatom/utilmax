@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      device/inNodeJS.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        device/inNodeJS.ts
       </h1>
       
 
@@ -106,31 +106,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+            <pre class="prettyprint source linenums"><code>let yes!: boolean
+
+/**
+ * 检查是否在 Node.js 中。
+ *
+ * @returns 返回检查结果
+ * @example
+ * ```typescript
+ * if (inNodeJS()) {
+ *   console.log('你在 Node.js 中')
+ * }
+ * ```
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-    }
-
-    return pairs.join('&amp;');
-}</code></pre>
+export function inNodeJS(): boolean {
+  if (yes == null) {
+    yes =
+      typeof global === 'object' &amp;&amp;
+      typeof global['process'] === 'object' &amp;&amp;
+      typeof global['process']['versions'] === 'object' &amp;&amp;
+      global['process']['versions']['node'] != null
+  }
+  return yes
+}
+</code></pre>
         </article>
     </section>
 

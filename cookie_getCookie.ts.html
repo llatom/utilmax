@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      cookie/getCookie.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        cookie/getCookie.ts
       </h1>
       
 
@@ -108,28 +108,19 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
+ * @desc 根据name读取cookie
+ * @param  {String} name 
  * @return {String}
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
+export function getCookie(name:string) : string {
+    const arr = document.cookie.replace(/\s/g, "").split(';');
+    for (let i = 0; i &lt; arr.length; i++) {
+        const tempArr = arr[i].split('=');
+        if (tempArr[0] === name) {
+            return decodeURIComponent(tempArr[1]);
         }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
     }
-
-    return pairs.join('&amp;');
+    return '';
 }</code></pre>
         </article>
     </section>

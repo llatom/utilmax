@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      array/arrayEqual.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        array/arrayEqual.ts
       </h1>
       
 
@@ -108,28 +108,18 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc 判断两个数组是否相等
+ * @param {Array} arr1 
+ * @param {Array} arr2 
+ * @return {Boolean}
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+export function arrayEqual&lt;T>(arr1:T[], arr2:T[]):boolean {
+    if (arr1 === arr2) return true;
+    if (arr1.length !== arr2.length) return false;
+    for (let i = 0; i &lt; arr1.length; ++i) {
+        if (arr1[i] !== arr2[i]) return false;
     }
-
-    return pairs.join('&amp;');
+    return true;
 }</code></pre>
         </article>
     </section>

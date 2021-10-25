@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      device/inBrowser.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        device/inBrowser.ts
       </h1>
       
 
@@ -106,31 +106,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+            <pre class="prettyprint source linenums"><code>let yes!: boolean
+
+/**
+ * 检查是否在浏览器环境中。
+ *
+ * @returns 返回检查结果
+ * @example
+ * ```typescript
+ * if (inBrowser()) {
+ *   console.log('你在浏览器中')
+ * }
+ * ```
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-    }
-
-    return pairs.join('&amp;');
-}</code></pre>
+export function inBrowser(): boolean {
+  if (yes == null) {
+    yes =
+      typeof window === 'object' &amp;&amp;
+      typeof window.document === 'object' &amp;&amp;
+      window.document.nodeType === 9
+  }
+  return yes
+}
+</code></pre>
         </article>
     </section>
 

@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      time/formatRemainTime.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        time/formatRemainTime.ts
       </h1>
       
 
@@ -108,28 +108,25 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
+ * @desc   格式化现在距${endTime}的剩余时间
+ * @param  {Date} endTime  
  * @return {String}
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+export function formatRemainTime(endTime:Date): string {
+    const startDate = new Date(); //开始时间
+    const endDate = new Date(endTime); //结束时间
+    let t = endDate.getTime() - startDate.getTime(); //时间差
+    let d = 0,
+        h = 0,
+        m = 0,
+        s = 0;
+    if (t >= 0) {
+        d = Math.floor(t / 1000 / 3600 / 24);
+        h = Math.floor(t / 1000 / 60 / 60 % 24);
+        m = Math.floor(t / 1000 / 60 % 60);
+        s = Math.floor(t / 1000 % 60);
     }
-
-    return pairs.join('&amp;');
+    return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
 }</code></pre>
         </article>
     </section>

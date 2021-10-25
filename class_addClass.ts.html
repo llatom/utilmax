@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      class/addClass.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        class/addClass.ts
       </h1>
       
 
@@ -108,29 +108,19 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc   为元素添加class
+ * @param  {HTMLElement} ele 
+ * @param  {String} cls 
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
 
-    for (let key in obj) {
-        let value = obj[key];
+const hasClass = require('./hasClass');
 
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+export function addClass(ele:HTMLElement, cls:string) {
+    if (!hasClass(ele, cls)) {
+        ele.className += ' ' + cls;
     }
-
-    return pairs.join('&amp;');
-}</code></pre>
+}
+</code></pre>
         </article>
     </section>
 

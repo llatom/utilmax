@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      device/inTaro.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        device/inTaro.ts
       </h1>
       
 
@@ -107,30 +107,15 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * 检查是否在 [Taro 3](https://taro.js.org/) 中。
+ *
+ * @returns 返回检查结果
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-    }
-
-    return pairs.join('&amp;');
-}</code></pre>
+export function inTaro(): boolean {
+  // ref: https://github.com/NervJS/taro/blob/next/packages/taro-runtime/src/bom/navigator.ts#L16
+  return typeof navigator !== 'undefined' &amp;&amp; navigator.product === 'Taro'
+}
+</code></pre>
         </article>
     </section>
 

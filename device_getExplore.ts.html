@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      device/getExplore.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        device/getExplore.ts
       </h1>
       
 
@@ -108,28 +108,39 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc 获取浏览器类型和版本
+ * @return {String} 
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+ export function getExplore() : string {
+    const userAgent = navigator.userAgent;
+    let version;
+    if(/opera/i.test(userAgent) || /OPR/i.test(userAgent)){
+        version = getVersion(userAgent, "OPR/(\\d+\\.+\\d+)");
+        return 'Opera' + version;
+    }else if(/compatible/i.test(userAgent) &amp;&amp; /MSIE/i.test(userAgent)){
+        version = getVersion(userAgent, "MSIE (\\d+\\.+\\d+)");
+        return 'IE' + version;
+    }else if(/Edge/i.test(userAgent)){
+        version = getVersion(userAgent, "Edge/(\\d+\\.+\\d+)");
+        return 'Edge' + version;
+    }else if(/Firefox/i.test(userAgent)){
+        version = getVersion(userAgent, "Firefox/(\\d+\\.+\\d+)");
+        return 'Firefox' + version;
+    }else if(/Safari/i.test(userAgent) &amp;&amp; !/Chrome/i.test(userAgent)){
+        version = getVersion(userAgent, "Safari/(\\d+\\.+\\d+)");
+        return 'Safari' + version;
+    }else if(/Chrome/i.test(userAgent) &amp;&amp; /Safari/i.test(userAgent)){
+        version = getVersion(userAgent, "Chrome/(\\d+\\.+\\d+)");
+        return 'Chrome' + version;
+    }else{
+        return ''
     }
+}
 
-    return pairs.join('&amp;');
+function getVersion(userAgent:string, reg:string) {
+    const reBrowser = new RegExp(reg);
+    reBrowser.test(userAgent);
+    return parseFloat(RegExp['$1']);
 }</code></pre>
         </article>
     </section>

@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      time/isSameDay.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        time/isSameDay.ts
       </h1>
       
 
@@ -107,29 +107,24 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc   判断是否为同一天
+ * @param  {Date} date1 
+ * @param  {Date} date2 可选／默认值：当天
+ * @return {Boolean}
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+export function isSameDay(date1:Date, date2:Date):boolean {
+    if (!date2) {
+        date2 = new Date();
     }
+    const date1_year = date1.getFullYear(),
+        date1_month = date1.getMonth() + 1,
+        date1_date = date1.getDate();
+    const date2_year = date2.getFullYear(),
+        date2_month = date2.getMonth() + 1,
+        date2_date = date2.getDate()
 
-    return pairs.join('&amp;');
+    return date1_date === date2_date &amp;&amp; date1_month === date2_month &amp;&amp; date1_year === date2_year;
+
 }</code></pre>
         </article>
     </section>

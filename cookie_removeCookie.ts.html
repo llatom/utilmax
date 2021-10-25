@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      cookie/removeCookie.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        cookie/removeCookie.ts
       </h1>
       
 
@@ -106,30 +106,15 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>var setCookie = require('./setCookie');
+/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc 根据name删除cookie
+ * @param  {String} name 
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-    }
-
-    return pairs.join('&amp;');
+export function removeCookie(name:string) {
+    // 设置已过期，系统会立刻删除cookie
+    setCookie(name, '1', -1);
 }</code></pre>
         </article>
     </section>

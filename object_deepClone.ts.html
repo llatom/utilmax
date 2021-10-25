@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      object/deepClone.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        object/deepClone.ts
       </h1>
       
 
@@ -107,29 +107,42 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc 深拷贝，支持常见类型
+ * @param {Any} values
+ * @return {Any}
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
+export function deepClone(values:any) {
+    let copy;
 
-    for (let key in obj) {
-        let value = obj[key];
+    // Handle the 3 simple types, and null or undefined
+    if (null == values || "object" != typeof values) return values;
 
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+    // Handle Date
+    if (values instanceof Date) {
+        copy = new Date();
+        copy.setTime(values.getTime());
+        return copy;
     }
 
-    return pairs.join('&amp;');
+    // Handle Array
+    if (values instanceof Array) {
+        copy = [];
+        for (var i = 0, len = values.length; i &lt; len; i++) {
+            copy[i] = deepClone(values[i]);
+        }
+        return copy;
+    }
+
+    // Handle Object
+    if (values instanceof Object) {
+        copy = {};
+        for (var attr in values) {
+            if (values.hasOwnProperty(attr)) copy[attr] = deepClone(values[attr]);
+        }
+        return copy;
+    }
+
+    throw new Error("Unable to copy values! Its type isn't supported.");
 }</code></pre>
         </article>
     </section>

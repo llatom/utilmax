@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      object/isEmptyObject.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        object/isEmptyObject.ts
       </h1>
       
 
@@ -108,28 +108,14 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc   判断`obj`是否为空
+ * @param  {Object} obj
+ * @return {Boolean}
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-    }
-
-    return pairs.join('&amp;');
+export function isEmptyObject(obj:object) {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj))
+        return false
+    return !Object.keys(obj).length
 }</code></pre>
         </article>
     </section>

@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      device/inAndroid.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        device/inAndroid.ts
       </h1>
       
 
@@ -106,31 +106,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+            <pre class="prettyprint source linenums"><code>import { inBrowser } from './inBrowser'
+
+let yes!: boolean
+
+/**
+ * 检查是否在 Android 设备中。
+ *
+ * @returns 返回检查结果
+ * @example
+ * ```typescript
+ * if (inAndroid()) {
+ *   console.log('你在 Android 设备中')
+ * }
+ * ```
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-    }
-
-    return pairs.join('&amp;');
-}</code></pre>
+export function inAndroid(): boolean {
+  if (yes == null) {
+      yes =
+        inBrowser() &amp;&amp;
+        typeof window.navigator === 'object' &amp;&amp;
+        /Android/i.test(window.navigator.userAgent || '')
+  }
+  return yes
+}
+</code></pre>
         </article>
     </section>
 

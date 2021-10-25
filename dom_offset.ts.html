@@ -28,7 +28,7 @@
 
 
     <title>
-      url/stringfyQueryString.ts
+      dom/offset.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/stringfyQueryString.ts
+        dom/offset.ts
       </h1>
       
 
@@ -108,28 +108,21 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   对象序列化
- * @param  {Object} obj 
- * @return {String}
+ * @desc  获取一个元素的距离文档(document)的位置，类似jQ中的offset()
+ * @param {HTMLElement} ele 
+ * @returns { {left: number, top: number} }
  */
-export function stringfyQueryString(obj) {
-    if (!obj) return '';
-    const pairs = [];
-
-    for (let key in obj) {
-        let value = obj[key];
-
-        if (value instanceof Array) {
-            for (let i = 0; i &lt; value.length; ++i) {
-                pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
-            }
-            continue;
-        }
-
-        pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-    }
-
-    return pairs.join('&amp;');
+export function offset(ele:any) {
+    const pos = {
+        left: 0,
+        top: 0
+    };
+    while (ele) {
+        pos.left += ele.offsetLeft;
+        pos.top += ele.offsetTop;
+        ele = ele.offsetParent;
+    };
+    return pos;
 }</code></pre>
         </article>
     </section>
