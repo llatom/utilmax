@@ -1,0 +1,42 @@
+{
+  "name": "utilmax",
+  "version": "1.0.0",
+  "description": "utilmax is a small and useful utils library for JavaScript 🦑",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "doc": "jsdoc -c jsdoc.json",
+    "build": "rimraf lib && node ./build.js",
+    "deploy": "gh-pages -d docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cderek/utilmax.git"
+  },
+  "keywords": [
+    "utils",
+    "esbuild"
+  ],
+  "author": "cderek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cderek/utilmax/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/cderek"
+  },
+  "homepage": "https://github.com/cderek/utilmax#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.4",
+    "clean-jsdoc-theme": "^3.2.8",
+    "docdash": "^1.2.0",
+    "esbuild": "^0.13.8",
+    "gh-pages": "^3.2.3",
+    "html-minifier-terser": "^6.0.2",
+    "jsdoc": "^3.6.7",
+    "rimraf": "^3.0.2"
+  }
+}
