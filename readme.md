@@ -7,23 +7,27 @@
 ## Features
 
 - future-proofed - Written in TypeScript, supports Tree Shaking, ECMAScript Modules
-- [Documented](https://cderek.github.io/utilmax/global.html#)
+- [Documented](https://cderek.github.io/utilmax/index.html)
+
 ### Installation:
-``` bash
+
+```bash
 $ npm install utilmax  --D
 ```
+
 ### Usage
 
-``` javascript
+```javascript
 // 完整引入
-import * as utilmax from 'utilmax';
-const env = utilmax.getEnvironment()
+import * as utilmax from "utilmax";
+const env = utilmax.getEnvironment();
 ```
 
-**推荐使用**  
+**推荐使用**
 
 很多时候并不需要完整引入所有函数，所以只引入需要使用的方法即可。
-``` javascript
-import { getEnvironment } from 'utilmax';
-const env = getEnvironment()
+
+```javascript
+import { getEnvironment } from "utilmax";
+const env = getEnvironment();
 ```

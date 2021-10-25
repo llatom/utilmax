@@ -1,25 +1,20 @@
 {
   "name": "utilmax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "utilmax is a small and useful utils library for JavaScript 🦑",
   "main": "lib/index.js",
-  "files": [
-    "lib/"
-  ],
+  "files": ["lib/"],
   "scripts": {
     "doc": "jsdoc -c jsdoc.json",
     "build": "rimraf lib && node ./build.js",
-    "deploy": "gh-pages -d docs",
+    "deploy": "gh-pages -d docs/utilmax/$npm_package_version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/cderek/utilmax.git"
   },
-  "keywords": [
-    "utils",
-    "esbuild"
-  ],
+  "keywords": ["utils", "esbuild"],
   "author": "cderek",
   "license": "ISC",
   "bugs": {
