@@ -23,9 +23,9 @@ import * as utilmax from "utilmax";
 const env = utilmax.getEnvironment();
 ```
 
-**推荐使用**
+Best Practices
 
-很多时候并不需要完整引入所有函数，所以只引入需要使用的方法即可。
+In many cases, it is not necessary to introduce all the functions completely, so only the methods that need to be used can be introduced.
 
 ```javascript
 import { getEnvironment } from "utilmax";
