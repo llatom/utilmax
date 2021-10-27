@@ -53,11 +53,13 @@
  export * from './support/isSupportWebP'
 
  export * from './time/formatPassTime'
+ export * from './time/formatDate'
  export * from './time/formatRemainTime'
  export * from './time/isLeapYear'
  export * from './time/isSameDay'
  export * from './time/monthDays'
  export * from './time/timeLeft'
 
+ export * from './url/toSearch'
  export * from './url/parseQueryString'
  export * from './url/stringfyQueryString'

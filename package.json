@@ -1,6 +1,6 @@
 {
   "name": "utilmax",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "utilmax is a small and useful utils library for JavaScript 🦑",
   "main": "lib/index.js",
   "files": [

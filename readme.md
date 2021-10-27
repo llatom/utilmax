@@ -25,7 +25,7 @@ const env = utilmax.getEnvironment();
 
 Best Practices
 
-In many cases, it is not necessary to introduce all the functions completely, so only the methods that need to be used can be introduced.
+It is not necessary to introduce all the functions completely, so only the methods that need to be used can be introduced.
 
 ```javascript
 import { getEnvironment } from "utilmax";
