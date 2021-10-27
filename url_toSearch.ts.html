@@ -28,7 +28,7 @@
 
 
     <title>
-      dom/offset.ts
+      url/toSearch.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        dom/offset.ts
+        url/toSearch.ts
       </h1>
       
 
@@ -106,24 +106,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>  /**
  * 
- * @desc  获取一个元素的距离文档(document)的位置，类似jQ中的offset()
- * @param {HTMLElement} ele 
- * @returns { {left: number, top: number} }
+ * @desc   转换成 url search 
+ * @param  {Object} url  paramsData
+ * @return {String} 
  */
-export function offset(ele:any) {
-    const pos = {
-        left: 0,
-        top: 0
-    };
-    while (ele) {
-        pos.left += ele.offsetLeft;
-        pos.top += ele.offsetTop;
-        ele = ele.offsetParent;
-    };
-    return pos;
-}</code></pre>
+  export function toSearch&lt;T = AnyObj>(obj: T) {
+    const arr = Object.keys(obj).map((key) => {
+      let val = obj[key]
+  
+      if (typeof val !== 'string') {
+        try {
+          val = JSON.stringify(val)
+        } catch (err) {
+          console.error(err)
+        }
+      }
+  
+      return `${key}=${encodeURIComponent(val)}`
+    })
+    return '?' + arr.join('&amp;')
+  }
+  </code></pre>
         </article>
     </section>
 

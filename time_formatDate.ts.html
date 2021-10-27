@@ -28,7 +28,7 @@
 
 
     <title>
-      dom/offset.ts
+      time/formatDate.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        dom/offset.ts
+        time/formatDate.ts
       </h1>
       
 
@@ -107,22 +107,37 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc  获取一个元素的距离文档(document)的位置，类似jQ中的offset()
- * @param {HTMLElement} ele 
- * @returns { {left: number, top: number} }
+ * 格式化日期
+ * @param datetimeStr 原始时间字符串
+ * @param format 'YYYY-MM-DD HH:mm:ss'
  */
-export function offset(ele:any) {
-    const pos = {
-        left: 0,
-        top: 0
-    };
-    while (ele) {
-        pos.left += ele.offsetLeft;
-        pos.top += ele.offsetTop;
-        ele = ele.offsetParent;
-    };
-    return pos;
+ export function formatDate(datetimeStr:string, format = 'YYYY-MM-DD HH:mm:ss') {
+    const date = getDate(datetimeStr)
+    const obj = {
+      YYYY: date.getFullYear().toString().padStart(4, '0'),
+      MM: (date.getMonth() + 1).toString().padStart(2, '0'),
+      DD: date.getDate().toString().padStart(2, '0'),
+      HH: date.getHours().toString().padStart(2, '0'),
+      mm: date.getMinutes().toString().padStart(2, '0'),
+      ss: date.getSeconds().toString().padStart(2, '0'),
+      ms: date.getMilliseconds().toString().padStart(3, '0'),
+    }
+  
+    return format.replace(/(YYYY|MM|DD|HH|mm|ss|ms)/g, (_, $1) => {
+      return obj[$1]
+    })
+  }
+
+
+// 解析时间 兼容ios微信小程序客户端
+  function getDate(datetimeStr){
+	if(!datetimeStr){
+		return null;
+	}
+	if(typeof datetimeStr !== "string") {
+		return datetimeStr
+	}
+	return new Date(datetimeStr.replace(/-/g, '/'));
 }</code></pre>
         </article>
     </section>
