@@ -28,7 +28,7 @@
 
 
     <title>
-      url/toSearch.ts
+      object/getTypeOf.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/toSearch.ts
+        object/getTypeOf.ts
       </h1>
       
 
@@ -106,27 +106,15 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>  /**
- * 
- * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc   获取变量的类型
+ * @param  {Object} obj
+ * @return {String}
  */
-  export function toSearch&lt;T = AnyObj>(obj: T) {
-    const arr = Object.keys(obj).map((key) => {
-      let val = obj[key]
-  
-      if (typeof val !== 'string') {
-        try {
-          val = JSON.stringify(val)
-        } catch (err) {
-          console.error(err)
-        }
-      }
-  
-      return `${key}=${encodeURIComponent(val)}`
-    })
-    return '?' + arr.join('&amp;')
+
+ export function getTypeOf(obj: object) {
+    return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
   }
   </code></pre>
         </article>

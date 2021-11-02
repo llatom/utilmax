@@ -28,7 +28,7 @@
 
 
     <title>
-      url/toSearch.ts
+      moment/formatDate.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/toSearch.ts
+        moment/formatDate.ts
       </h1>
       
 
@@ -106,29 +106,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>  /**
- * 
- * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+            <pre class="prettyprint source linenums"><code>/**
+ * 格式化日期
+ * @param datetimeStr 原始时间字符串
+ * @param format 'YYYY-MM-DD HH:mm:ss'
  */
-  export function toSearch&lt;T = AnyObj>(obj: T) {
-    const arr = Object.keys(obj).map((key) => {
-      let val = obj[key]
+ export function formatDate(datetimeStr:string, format = 'YYYY-MM-DD HH:mm:ss') {
+    const date = getDate(datetimeStr)
+    const obj = {
+      YYYY: date.getFullYear().toString().padStart(4, '0'),
+      MM: (date.getMonth() + 1).toString().padStart(2, '0'),
+      DD: date.getDate().toString().padStart(2, '0'),
+      HH: date.getHours().toString().padStart(2, '0'),
+      mm: date.getMinutes().toString().padStart(2, '0'),
+      ss: date.getSeconds().toString().padStart(2, '0'),
+      ms: date.getMilliseconds().toString().padStart(3, '0'),
+    }
   
-      if (typeof val !== 'string') {
-        try {
-          val = JSON.stringify(val)
-        } catch (err) {
-          console.error(err)
-        }
-      }
-  
-      return `${key}=${encodeURIComponent(val)}`
+    return format.replace(/(YYYY|MM|DD|HH|mm|ss|ms)/g, (_, $1) => {
+      return obj[$1]
     })
-    return '?' + arr.join('&amp;')
   }
-  </code></pre>
+
+
+// 解析时间 兼容ios微信小程序客户端
+  function getDate(datetimeStr){
+	if(!datetimeStr){
+		return null;
+	}
+	if(typeof datetimeStr !== "string") {
+		return datetimeStr
+	}
+	return new Date(datetimeStr.replace(/-/g, '/'));
+}</code></pre>
         </article>
     </section>
 

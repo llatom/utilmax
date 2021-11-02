@@ -28,7 +28,7 @@
 
 
     <title>
-      url/toSearch.ts
+      moment/formatPassTime.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/toSearch.ts
+        moment/formatPassTime.ts
       </h1>
       
 
@@ -106,29 +106,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>  /**
- * 
- * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+            <pre class="prettyprint source linenums"><code>/**
+ * @desc   格式化${startTime}距现在的已过时间
+ * @param  {Date} startTime 
+ * @return {String}
  */
-  export function toSearch&lt;T = AnyObj>(obj: T) {
-    const arr = Object.keys(obj).map((key) => {
-      let val = obj[key]
-  
-      if (typeof val !== 'string') {
-        try {
-          val = JSON.stringify(val)
-        } catch (err) {
-          console.error(err)
-        }
-      }
-  
-      return `${key}=${encodeURIComponent(val)}`
-    })
-    return '?' + arr.join('&amp;')
-  }
-  </code></pre>
+export function formatPassTime(startTime:Date) {
+    const currentTime = Date.parse(new Date()),
+        time = currentTime - startTime,
+        day = parseInt(time / (1000 * 60 * 60 * 24)),
+        hour = parseInt(time / (1000 * 60 * 60)),
+        min = parseInt(time / (1000 * 60)),
+        month = parseInt(day / 30),
+        year = parseInt(month / 12);
+    if (year) return year + "年前"
+    if (month) return month + "个月前"
+    if (day) return day + "天前"
+    if (hour) return hour + "小时前"
+    if (min) return min + "分钟前"
+    else return '刚刚'
+}</code></pre>
         </article>
     </section>
 

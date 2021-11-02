@@ -28,7 +28,7 @@
 
 
     <title>
-      url/toSearch.ts
+      moment/isSameDay.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/toSearch.ts
+        moment/isSameDay.ts
       </h1>
       
 
@@ -106,29 +106,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>  /**
- * 
- * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+            <pre class="prettyprint source linenums"><code>/**
+ * @desc   判断是否为同一天
+ * @param  {Date} date1 
+ * @param  {Date} date2 可选／默认值：当天
+ * @return {Boolean}
  */
-  export function toSearch&lt;T = AnyObj>(obj: T) {
-    const arr = Object.keys(obj).map((key) => {
-      let val = obj[key]
-  
-      if (typeof val !== 'string') {
-        try {
-          val = JSON.stringify(val)
-        } catch (err) {
-          console.error(err)
-        }
-      }
-  
-      return `${key}=${encodeURIComponent(val)}`
-    })
-    return '?' + arr.join('&amp;')
-  }
-  </code></pre>
+export function isSameDay(date1:Date, date2:Date):boolean {
+    if (!date2) {
+        date2 = new Date();
+    }
+    const date1_year = date1.getFullYear(),
+        date1_month = date1.getMonth() + 1,
+        date1_date = date1.getDate();
+    const date2_year = date2.getFullYear(),
+        date2_month = date2.getMonth() + 1,
+        date2_date = date2.getDate()
+
+    return date1_date === date2_date &amp;&amp; date1_month === date2_month &amp;&amp; date1_year === date2_year;
+
+}</code></pre>
         </article>
     </section>
 

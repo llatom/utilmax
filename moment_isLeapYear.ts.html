@@ -28,7 +28,7 @@
 
 
     <title>
-      url/toSearch.ts
+      moment/isLeapYear.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/toSearch.ts
+        moment/isLeapYear.ts
       </h1>
       
 
@@ -106,29 +106,19 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>  /**
+            <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+ * @desc 是否为闰年
+ * @param {Number} year
+ * @returns {Boolean}
  */
-  export function toSearch&lt;T = AnyObj>(obj: T) {
-    const arr = Object.keys(obj).map((key) => {
-      let val = obj[key]
-  
-      if (typeof val !== 'string') {
-        try {
-          val = JSON.stringify(val)
-        } catch (err) {
-          console.error(err)
-        }
-      }
-  
-      return `${key}=${encodeURIComponent(val)}`
-    })
-    return '?' + arr.join('&amp;')
+
+export function isLeapYear(year:number):boolean {
+  if (0 === year % 4 &amp;&amp; (year % 100 !== 0 || year % 400 === 0)) {
+    return true
   }
-  </code></pre>
+  return false;
+}</code></pre>
         </article>
     </section>
 

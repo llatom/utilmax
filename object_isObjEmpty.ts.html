@@ -28,7 +28,7 @@
 
 
     <title>
-      url/toSearch.ts
+      object/isObjEmpty.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/toSearch.ts
+        object/isObjEmpty.ts
       </h1>
       
 
@@ -106,29 +106,16 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>  /**
- * 
- * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc   判断`obj`是否为空
+ * @param  {Object} obj
+ * @return {Boolean}
  */
-  export function toSearch&lt;T = AnyObj>(obj: T) {
-    const arr = Object.keys(obj).map((key) => {
-      let val = obj[key]
-  
-      if (typeof val !== 'string') {
-        try {
-          val = JSON.stringify(val)
-        } catch (err) {
-          console.error(err)
-        }
-      }
-  
-      return `${key}=${encodeURIComponent(val)}`
-    })
-    return '?' + arr.join('&amp;')
-  }
-  </code></pre>
+
+export function isObjEmpty(obj: object) {
+  return Reflect.ownKeys(obj).length === 0 &amp;&amp; obj.constructor === Object;
+}</code></pre>
         </article>
     </section>
 

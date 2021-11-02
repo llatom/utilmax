@@ -28,7 +28,7 @@
 
 
     <title>
-      url/toSearch.ts
+      text/copyToClipboard.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        url/toSearch.ts
+        text/copyToClipboard.ts
       </h1>
       
 
@@ -106,29 +106,15 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>  /**
- * 
- * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc   复制内容到剪切板
+ * @param  {string} 
  */
-  export function toSearch&lt;T = AnyObj>(obj: T) {
-    const arr = Object.keys(obj).map((key) => {
-      let val = obj[key]
-  
-      if (typeof val !== 'string') {
-        try {
-          val = JSON.stringify(val)
-        } catch (err) {
-          console.error(err)
-        }
-      }
-  
-      return `${key}=${encodeURIComponent(val)}`
-    })
-    return '?' + arr.join('&amp;')
-  }
-  </code></pre>
+
+ export function copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text);
+  }</code></pre>
         </article>
     </section>
 
