@@ -1,9 +1,11 @@
 {
   "name": "utilmax",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "utilmax is a small and useful utils library for JavaScript 🦑",
   "main": "lib/index.js",
-  "files": ["lib/"],
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "doc": "jsdoc -c jsdoc.json",
     "build": "rimraf lib && node ./build.js",
@@ -14,7 +16,10 @@
     "type": "git",
     "url": "git+ssh://git@github.com/cderek/utilmax.git"
   },
-  "keywords": ["utils", "esbuild"],
+  "keywords": [
+    "utils",
+    "esbuild"
+  ],
   "author": "cderek",
   "license": "ISC",
   "bugs": {
