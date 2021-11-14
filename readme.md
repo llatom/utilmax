@@ -23,7 +23,7 @@ const env = utilmax.getEnvironment();
 ```
 
 
-> 通常情况并不需要全量引入，所以仅添加添加需要的方法即可，如下：
+> 通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：
 
 ```javascript
 import { getEnvironment } from "utilmax";
