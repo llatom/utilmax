@@ -28,7 +28,7 @@
 
 
     <title>
-      moment/formatRemainTime.ts
+      number/random.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        moment/formatRemainTime.ts
+        number/random.ts
       </h1>
       
 
@@ -108,26 +108,23 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   格式化现在距${endTime}的剩余时间
- * @param  {Date} endTime  
- * @return {String}
+ * @desc 生成随机数
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
  */
-export function formatRemainTime(endTime:Date): string {
-    const startDate = new Date(); //开始时间
-    const endDate = new Date(endTime); //结束时间
-    let t = endDate.getTime() - startDate.getTime(); //时间差
-    let d = 0,
-        h = 0,
-        m = 0,
-        s = 0;
-    if (t >= 0) {
-        d = Math.floor(t / 1000 / 3600 / 24);
-        h = Math.floor(t / 1000 / 60 / 60 % 24);
-        m = Math.floor(t / 1000 / 60 % 60);
-        s = Math.floor(t / 1000 % 60);
-    }
-    return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
-}</code></pre>
+
+export function randomNum(min, max) {
+  switch (arguments.length) {
+    case 1:
+      return parseInt(Math.random() * min + 1, 10)
+    case 2:
+      return parseInt(Math.random() * (max - min + 1) + min, 10)
+    default:
+      return 0
+  }
+}
+</code></pre>
         </article>
     </section>
 

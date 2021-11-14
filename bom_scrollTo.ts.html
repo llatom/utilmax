@@ -28,7 +28,7 @@
 
 
     <title>
-      moment/formatRemainTime.ts
+      bom/scrollTo.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        moment/formatRemainTime.ts
+        bom/scrollTo.ts
       </h1>
       
 
@@ -107,27 +107,65 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   格式化现在距${endTime}的剩余时间
- * @param  {Date} endTime  
- * @return {String}
+ * @desc 滚动条滚动到指定位置
+ * @param {number} top - 滚动条滚动到的位置
+ * @param {number} [duration=300] - 滚动动画时长
+ * @param {string} [easing='ease-out'] - 滚动动画类型
+ * @param {Function} [callback] - 滚动动画结束后的回调函数
+ * @param {Document} [root=document] - 要获取滚动条位置的文档对象
+ * @return {Object} - 返回滚动条位置
  */
-export function formatRemainTime(endTime:Date): string {
-    const startDate = new Date(); //开始时间
-    const endDate = new Date(endTime); //结束时间
-    let t = endDate.getTime() - startDate.getTime(); //时间差
-    let d = 0,
-        h = 0,
-        m = 0,
-        s = 0;
-    if (t >= 0) {
-        d = Math.floor(t / 1000 / 3600 / 24);
-        h = Math.floor(t / 1000 / 60 / 60 % 24);
-        m = Math.floor(t / 1000 / 60 % 60);
-        s = Math.floor(t / 1000 % 60);
+
+// 解决平滑滚动存在兼容性问题
+export default (
+  yORxy: number | { x: number; y: number },
+  params?: {
+    smooth: boolean;
+    callBack: null | Function;
+    averageStep: number;
+  }
+) => {
+  let xy = { x: 0, y: 0 };
+  const { smooth, callback, averageStep } = Object.assign(
+    {
+      smooth: true,
+      callback: null,
+      averageStep: 50
+    },
+    params
+  );
+  const isSmooth = smooth === undefined ? true : smooth;
+  if (typeof yORxy === "number") {
+    xy.y = yORxy;
+  } else {
+    xy = Object.assign(xy, yORxy);
+  }
+
+  if (!isSmooth) {
+    window.scrollTo(xy.x, xy.y);
+    return callback &amp;&amp; callback();
+  }
+
+  let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  let scrollLeft =
+    document.documentElement.scrollLeft || document.body.scrollLeft;
+
+  const scrollFn = () => {
+    if (scrollLeft === xy.x &amp;&amp; scrollTop === xy.y) {
+      return callback &amp;&amp; callback();
     }
-    return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
-}</code></pre>
+
+    scrollTop =
+      scrollTop - averageStep &lt;= xy.y ? xy.y : scrollTop - averageStep;
+    scrollLeft =
+      scrollLeft - averageStep &lt;= xy.x ? xy.x : scrollLeft - averageStep;
+    window.scrollTo(scrollLeft, scrollTop);
+    requestAnimationFrame(scrollFn);
+  };
+
+  scrollFn();
+};
+</code></pre>
         </article>
     </section>
 

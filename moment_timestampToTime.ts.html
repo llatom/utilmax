@@ -28,7 +28,7 @@
 
 
     <title>
-      moment/formatRemainTime.ts
+      moment/timestampToTime.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        moment/formatRemainTime.ts
+        moment/timestampToTime.ts
       </h1>
       
 
@@ -108,25 +108,14 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 
- * @desc   格式化现在距${endTime}的剩余时间
- * @param  {Date} endTime  
- * @return {String}
+ * @desc 时间戳转换为时间, 默认为当前时间转换结果,isMs为时间戳是否为毫秒
+ * @param {number} timestamp 时间戳
+ * @param {boolean} isMs 时间戳是否为毫秒
+ * @returns {string} 时间
  */
-export function formatRemainTime(endTime:Date): string {
-    const startDate = new Date(); //开始时间
-    const endDate = new Date(endTime); //结束时间
-    let t = endDate.getTime() - startDate.getTime(); //时间差
-    let d = 0,
-        h = 0,
-        m = 0,
-        s = 0;
-    if (t >= 0) {
-        d = Math.floor(t / 1000 / 3600 / 24);
-        h = Math.floor(t / 1000 / 60 / 60 % 24);
-        m = Math.floor(t / 1000 / 60 % 60);
-        s = Math.floor(t / 1000 % 60);
-    }
-    return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
+export function timestampToTime(timestamp = Date.parse(new Date()), isMs = true) {
+  const date = new Date(timestamp * (isMs ? 1 : 1000))
+  return `${date.getFullYear()}-${date.getMonth() + 1 &lt; 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 }</code></pre>
         </article>
     </section>

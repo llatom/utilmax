@@ -28,7 +28,7 @@
 
 
     <title>
-      moment/formatRemainTime.ts
+      dom/frozenScroll.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        moment/formatRemainTime.ts
+        dom/frozenScroll.ts
       </h1>
       
 
@@ -107,27 +107,31 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   格式化现在距${endTime}的剩余时间
- * @param  {Date} endTime  
- * @return {String}
+ * 功能描述：一些业务场景，如弹框出现时，需要禁止页面滚动，这是兼容安卓和 iOS 禁止页面滚动的解决方案
  */
-export function formatRemainTime(endTime:Date): string {
-    const startDate = new Date(); //开始时间
-    const endDate = new Date(endTime); //结束时间
-    let t = endDate.getTime() - startDate.getTime(); //时间差
-    let d = 0,
-        h = 0,
-        m = 0,
-        s = 0;
-    if (t >= 0) {
-        d = Math.floor(t / 1000 / 3600 / 24);
-        h = Math.floor(t / 1000 / 60 / 60 % 24);
-        m = Math.floor(t / 1000 / 60 % 60);
-        s = Math.floor(t / 1000 % 60);
-    }
-    return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
-}</code></pre>
+
+let scrollTop = 0;
+
+export function preventScroll() {
+  // 存储当前滚动位置
+  scrollTop = window.scrollY;
+
+  // 将可滚动区域固定定位，可滚动区域高度为 0 后就不能滚动了
+  document.body.style["overflow-y"] = "hidden";
+  document.body.style.position = "fixed";
+  document.body.style.width = "100%";
+  document.body.style.top = -scrollTop + "px";
+  // document.body.style['overscroll-behavior'] = 'none'
+}
+
+export function recoverScroll() {
+  document.body.style["overflow-y"] = "auto";
+  document.body.style.position = "static";
+  // document.querySelector('body').style['overscroll-behavior'] = 'none'
+
+  window.scrollTo(0, scrollTop);
+}
+</code></pre>
         </article>
     </section>
 

@@ -28,7 +28,7 @@
 
 
     <title>
-      moment/formatRemainTime.ts
+      bom/style.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        moment/formatRemainTime.ts
+        bom/style.ts
       </h1>
       
 
@@ -107,27 +107,80 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
- * @desc   格式化现在距${endTime}的剩余时间
- * @param  {Date} endTime  
- * @return {String}
+ * 告知浏览器支持的指定css属性情况
+ * @param {string} propertyName - css属性名
+ * @returns {boolean} - 是否支持
  */
-export function formatRemainTime(endTime:Date): string {
-    const startDate = new Date(); //开始时间
-    const endDate = new Date(endTime); //结束时间
-    let t = endDate.getTime() - startDate.getTime(); //时间差
-    let d = 0,
-        h = 0,
-        m = 0,
-        s = 0;
-    if (t >= 0) {
-        d = Math.floor(t / 1000 / 3600 / 24);
-        h = Math.floor(t / 1000 / 60 / 60 % 24);
-        m = Math.floor(t / 1000 / 60 % 60);
-        s = Math.floor(t / 1000 % 60);
+export function validateCssKey(key) {
+  const jsKey = toCamelCase(key); // 有些css属性是连字符号形成
+  if (jsKey in document.documentElement.style) {
+    return key;
+  }
+  let validKey = '';
+  // 属性名为前缀在js中的形式，属性值是前缀在css中的形式
+  // 经尝试，Webkit 也可是首字母小写 webkit
+  const prefixMap = {
+    Webkit: '-webkit-',
+    Moz: '-moz-',
+    ms: '-ms-',
+    O: '-o-'
+  };
+  for (const jsPrefix in prefixMap) {
+    const styleKey = toCamelCase(`${jsPrefix}-${jsKey}`);
+    if (styleKey in document.documentElement.style) {
+      validKey = prefixMap[jsPrefix] + key;
+      break;
     }
-    return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
-}</code></pre>
+  }
+  return validKey;
+}
+
+/**
+ * 把有连字符号的字符串转化为驼峰命名法的字符串
+ * @param {string} str - 字符串
+ * @returns {string} - 驼峰命名法的字符串
+ */
+export function toCamelCase(value) {
+  return value.replace(/-(\w)/g, (matched, letter) => {
+    return letter.toUpperCase();
+  });
+}
+
+
+/**
+ * 检查浏览器是否支持某个css属性值
+ * @param {string} propertyName - css属性名
+ * @returns {boolean} - 是否支持
+ */
+export function valiateCssValue (key, value) {
+  const prefix = ['-o-', '-ms-', '-moz-', '-webkit-', ''];
+  const prefixValue = prefix.map(item => {
+    return item + value;
+  });
+  const element = document.createElement('div');
+  const eleStyle = element.style;
+  // 应用每个前缀的情况，且最后也要应用上没有前缀的情况，看最后浏览器起效的何种情况
+  // 这就是最好在prefix里的最后一个元素是''
+  prefixValue.forEach(item => {
+    eleStyle[key] = item;
+  });
+  return eleStyle[key];
+}
+
+/**
+ * 判读浏览器是否支持 CSS 属性
+ * @param {string} propertyName - css属性名
+ * @returns {boolean} - 是否支持
+ */
+
+export function validCss (key, value) {
+  const validCss = validateCssKey(key);
+  if (validCss) {
+    return validCss;
+  }
+  return valiateCssValue(key, value);
+}
+</code></pre>
         </article>
     </section>
 
