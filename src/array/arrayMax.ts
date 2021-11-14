@@ -3,6 +3,6 @@
  * @param {Array} arr
  * @returns {number}
  */
-export function arrayMax(arr:[]) {
+export function arrayMax(arr) {
   return Math.max(...arr);
 }

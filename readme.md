@@ -1,9 +1,9 @@
 <div align="center">
-	<img src="https://raw.githubusercontent.com/cderek/utilmax/master/assets/logo.png" width="300px" alt="just logo img">
   <h1>utilmax</h1>
 </div>
 <p>
   <img alt="Version" src="https://img.shields.io/github/v/release/cderek/utilmax.svg" />
+  
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/cderek/utilmax.svg?style=popout" />
 </p>
 
@@ -18,7 +18,6 @@ $ npm install utilmax  --D
 ### Usage
 
 ```javascript
-// 完整引入
 import * as utilmax from "utilmax";
 const env = utilmax.getEnvironment();
 ```

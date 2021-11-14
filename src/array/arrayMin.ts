@@ -3,6 +3,6 @@
  * @param {Array} arr
  * @returns {number}
  */
-export function arrayMin(arr: []) {
+export function arrayMin(arr) {
   return Math.min(...arr);
 }

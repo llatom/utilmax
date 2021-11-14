@@ -53,8 +53,6 @@ export * from "./dom/getStyle";
 export * from "./function/debounce";
 export * from "./function/throttle";
 
-export * from "./keycode/getKeyName";
-
 export * from "./moment/formatPassTime";
 export * from "./moment/formatDate";
 export * from "./moment/formatRemainTime";
@@ -71,7 +69,6 @@ export * from "./object/deepClone";
 export * from "./object/isObjEmpty";
 export * from './object/getTypeOf'
 
-export * from "./regexp/isColor";
 export * from "./regexp/isEmail";
 export * from "./regexp/isIdCard";
 export * from "./regexp/isPhoneNum";
