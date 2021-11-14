@@ -1,8 +1,9 @@
 /**
  * 
  * @desc 为元素移除class
- * @param {HTMLElement} ele 
- * @param {String} cls 
+ * @param {HTMLElement} el - 需要移除class的元素
+ * @param {string} className - 需要移除的class
+ * @returns {void}
  */
 
 const hasClass = require('./hasClass');

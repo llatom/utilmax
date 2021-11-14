@@ -1,8 +1,9 @@
 /**
  * 
  * @desc   为元素添加class
- * @param  {HTMLElement} ele 
- * @param  {String} cls 
+ * @param  {HTMLElement} el - 要添加class的元素
+ * @param  {string} className - 要添加的class名称
+ * @return {void}
  */
 
 const hasClass = require('./hasClass');

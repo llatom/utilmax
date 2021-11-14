@@ -1,7 +1,7 @@
 /**
  *
  * @desc 获取操作系统类型
- * @return {String}
+ * @return {string} - 操作系统类型
  */
 import { inAndroid } from "./inAndroid";
 import { inBrowser } from "./inBrowser";
@@ -29,8 +29,7 @@ let env: GetEnvironmentResult | undefined;
 
 /**
  * 获取运行环境信息。
- *
- * @returns 返回运行环境信息
+ * @return {GetEnvironmentResult} - 运行环境信息
  */
 export function getEnvironment(): GetEnvironmentResult {
   if (env == null) {

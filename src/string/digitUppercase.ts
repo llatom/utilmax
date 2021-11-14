@@ -1,8 +1,7 @@
 /**
- * 
  * @desc   现金额转大写
- * @param  {Number} n 
- * @return {String}
+ * @param  {number} n
+ * @return {string}
  */
 export function digitUppercase(n:number): string {
     const  fraction = ['角', '分'];

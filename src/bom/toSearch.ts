@@ -1,8 +1,8 @@
   /**
  * 
  * @desc   转换成 url search 
- * @param  {Object} url  paramsData
- * @return {String} 
+ * @param  {object} obj - 需要转换的对象
+ * @return {string} - 转换后的字符串
  */
   export function toSearch<T = AnyObj>(obj: T) {
     const arr = Object.keys(obj).map((key) => {

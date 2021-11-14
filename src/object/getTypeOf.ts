@@ -1,8 +1,8 @@
 /**
  *
  * @desc   获取变量的类型
- * @param  {Object} obj
- * @return {String}
+ * @param  {any} obj
+ * @return {string}
  */
 
  export function getTypeOf(obj: object) {

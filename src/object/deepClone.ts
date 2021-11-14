@@ -1,7 +1,7 @@
 /**
  * @desc 深拷贝，支持常见类型
- * @param {Any} values
- * @return {Any}
+ * @param {any} obj
+ * @returns {any}
  */
 export function deepClone(values:any) {
     let copy;

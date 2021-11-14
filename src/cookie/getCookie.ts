@@ -1,8 +1,8 @@
 /**
  * 
  * @desc 根据name读取cookie
- * @param  {String} name 
- * @return {String}
+ * @param {string} name - cookie名称
+ * @return {string} - cookie值
  */
 export function getCookie(name:string) : string {
     const arr = document.cookie.replace(/\s/g, "").split(';');

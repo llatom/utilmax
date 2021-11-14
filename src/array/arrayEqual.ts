@@ -1,15 +1,10 @@
 /**
- * 
- * @desc 判断两个数组是否相等
- * @param {Array} arr1 
- * @param {Array} arr2 
- * @return {Boolean}
+ * @desc 对比两个数组并且返回其中不同的元素
+ * @param {Array} arr1
+ * @param {Array} arr2
+ * @returns {Array}
  */
-export function arrayEqual<T>(arr1:T[], arr2:T[]):boolean {
-    if (arr1 === arr2) return true;
-    if (arr1.length !== arr2.length) return false;
-    for (let i = 0; i < arr1.length; ++i) {
-        if (arr1[i] !== arr2[i]) return false;
-    }
-    return true;
+
+ export function arrayEqual<T>(arrA:T[], arrB:T[]):Array<T> {
+  return arrA.filter(v => !arrB.includes(v))
 }

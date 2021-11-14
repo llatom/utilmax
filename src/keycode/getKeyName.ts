@@ -109,8 +109,8 @@ const keyCodeMap = {
 };
 /**
  * @desc 根据keycode获得键名
- * @param  {Number} keycode 
- * @return {String}
+ * @param {number} keyCode
+ * @returns {string}
  */
 export function getKeyName(keycode:number) {
     if (keyCodeMap[keycode]) {
