@@ -2,9 +2,9 @@
   <h1>utilmax</h1>
 </div>
 <p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/cderek/utilmax.svg" />
+  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
   
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/cderek/utilmax.svg?style=popout" />
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
 </p>
 
 > 通用js方法库

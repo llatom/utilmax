@@ -27,3 +27,13 @@ describe("String functions", () => {
     expect(utilmax.digitUppercase(23)).toBe("二十三");
   });
 });
+
+describe("String functions", () => {
+  test("dataURLtoFile()", () => {
+    expect(
+      utilmax.dataURLtoFile(
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVDhP1ZMtjoRAEEY5AIIDIBCIkUgEYiQCgUAgECMQCO4yB0AgkAgEAoFAIBBIJIIDjEAgEIiaVKdmO738iM2K3ZeQzldpXofqQoJf5h8L+76HOI7hfr+DpmlgmiZEUQRt29KOY3bCZVnYi6qqwvP5hKZpYJom6LqOZawHQcD2HbEToszzPJjnmSoiKHo8HuD7PlVEBGFZlqDr+unpH7ZtA8MwIM9zqnAEYRiGkGUZpWvwcNd1KXEEIZ46DAOla7AliqJQ4gjC2+0G4zhSugbbIssyJY4gxGYf9eWIqqrAtm1KHEFYFAX77HVdqXIMXoplWZAkCVU4ghDBGcPnTIoyHC3HcagishNis3HG8O9I0/Srp7jiBGCf8XZfrxerf2cn/FDXNRtwnEtJktiKGXt3xanwp/x1IcAb6tAxUiS/ItUAAAAASUVORK5CYII="
+      )
+    ).toEqual(new File([new Uint8Array([255, 255, 255, 255])], "image.png"));
+  });
+});

@@ -14,18 +14,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/cderek/utilmax.git"
+    "url": "git+ssh://git@github.com/metaczen/utilmax.git"
   },
   "keywords": [
     "utils",
     "esbuild"
   ],
-  "author": "cderek",
+  "author": "metaczen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cderek/utilmax/issues"
+    "url": "https://github.com/metaczen/utilmax/issues"
   },
-  "homepage": "https://github.com/cderek/utilmax#readme",
+  "homepage": "https://github.com/metaczen/utilmax#readme",
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.16.0",
