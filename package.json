@@ -1,7 +1,7 @@
 {
   "name": "utilmax",
   "version": "1.0.8",
-  "description": "utilmax is a small and useful utils library for JavaScript 🦑",
+  "description": "🐝 utilmax is a small and useful utils library for JavaScript.",
   "main": "lib/index.js",
   "files": [
     "lib/"
@@ -42,6 +42,7 @@
     "jest": "^27.0.1",
     "jsdoc": "^3.6.7",
     "jsdoc-babel": "^0.5.0",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"

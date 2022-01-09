@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
+coverage/
 lib/
-/docs
-
+docs/
 
 # Log files
 npm-debug.log*

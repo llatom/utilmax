@@ -12,7 +12,7 @@
 ### Installation:
 
 ```bash
-$ npm install utilmax  --D
+$ npm i --save utilmax
 ```
 
 ### Usage
