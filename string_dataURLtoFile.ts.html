@@ -31,7 +31,7 @@
 
 
     <title>
-      moment/monthDays.ts
+      string/dataURLtoFile.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -98,7 +98,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        moment/monthDays.ts
+        string/dataURLtoFile.ts
       </h1>
       
 
@@ -109,17 +109,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** 
- * @desc 获取指定日期月份的总天数
- * @param {Date} time
- * @return {Number}
-*/
-export function monthDays(time:Date):number {
-    time = new Date(time);
-    const year = time.getFullYear();
-    const month = time.getMonth() + 1;
-    return new Date(year, month, 0).getDate();
-}</code></pre>
+            <pre class="prettyprint source linenums"><code>/**
+ * desc   将base64转换为文件
+ * @param dataurl
+ * @returns {File}
+ */
+export function dataURLtoFile(dataurl: string) {
+    const block = dataurl.split(';');
+    const b64Data = block[1].split(',')[1];
+    const bstr = atob(b64Data);  // 将base64编码转为字符串
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n); // 创建初始化为0的，包含length个元素的无符号整型数组
+    const filename =  `${new Date().getTime()}.jpg`
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new File([u8arr], filename, {
+      type: 'image/jpeg',
+    });
+  }
+  </code></pre>
         </article>
     </section>
 
