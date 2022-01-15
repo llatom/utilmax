@@ -74,4 +74,6 @@ export * from "./regexp/isPhoneNum";
 export * from "./regexp/isUrl";
 
 export * from "./string/digitUppercase";
-export * from "./string/dataURLtoFile";
+
+export * from "./image";
+
