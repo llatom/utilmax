@@ -15,7 +15,7 @@ const luhnCheck = (num) => {
     .split("")
     .reverse()
     .map((x) => parseInt(x));
-  const lastDigit = arr.shift();
+  const lastDigit = arr.shift() as number;
   let sum = arr.reduce(
     (acc, val, i) =>
       i % 2 !== 0 ? acc + val : acc + ((val *= 2) > 9 ? val - 9 : val),
