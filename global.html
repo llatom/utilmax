@@ -1,131 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global | utilmax</title>
 
-    <!-- Adding favicon -->
-    
-
-    <!-- Adding meta -->
-    
-
-    <!-- Adding external script-->
-    
-
-    <!-- Adding external style-->
-    
-
-    <!-- Adding scripts-->
-    
-
-    <!-- Adding style-->
-    
-
-    <!-- Adding overlay script-->
-    
-
-    <!-- Adding overlay style-->
-    
-
-
-    <title>
-      Global
-    </title>
-
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/third-party/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/third-party/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/reset.css">
-    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-base.css">
-    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
     
-    <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="display:none">
-    <defs>
-        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
-            <g>
-                <path
-                    d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z" />
-                <path
-                    d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z" />
-            </g>
-        </symbol>
-        <symbol id='search-icon' viewBox="0 0 512 512">
-            <g>
-                <g>
-                    <path
-                        d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z" />
-                </g>
-            </g>
-            <g>
-                <g>
-                    <path
-                        d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z" />
-                </g>
-            </g>
-        </symbol>
-        <symbol id="down-icon" viewBox="0 0 16 16">
-            <path 
-                fill-rule="evenodd" 
-                clip-rule="evenodd" 
-                d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"
-            >
-            </path>
-        </symbol>
-    </defs>
-</svg>
-  </head>
-
-  <body>
-
-    <nav class="navbar" id="navbar">
-      <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">Home</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="6526223" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=""><a href="global.html#binarySearch">binarySearch</a></li><li class="accordion-list" id=""><a href="global.html#debounce">debounce</a></li><li class="accordion-list" id=""><a href="global.html#deepClone">deepClone</a></li><li class="accordion-list" id=""><a href="global.html#equals">equals</a></li><li class="accordion-list" id=""><a href="global.html#getType">getType</a></li><li class="accordion-list" id=""><a href="global.html#getURLParameters">getURLParameters</a></li><li class="accordion-list" id=""><a href="global.html#hexToRGB">hexToRGB</a></li><li class="accordion-list" id=""><a href="global.html#isEmpty">isEmpty</a></li><li class="accordion-list" id=""><a href="global.html#isNode">isNode</a></li><li class="accordion-list" id=""><a href="global.html#isWeekend">isWeekend</a></li><li class="accordion-list" id=""><a href="global.html#luhnCheck">luhnCheck</a></li><li class="accordion-list" id=""><a href="global.html#union">union</a></li><li class="accordion-list" id=""><a href="global.html#validateNumber">validateNumber</a></li></ul> </div></div>
-      
-
-    </nav>
-    <div class="navbar-ham" id="navbar-ham">
-      <div>
-        <div class="first"></div>
-        <div class="second"></div>
-        <div class="third"></div>
-      </div>
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="">
+        
+            <img src="img/toast-ui.png" width="100%" height="100%">
+        
     </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">utilmax</a></h1>
+        
+            <span class="version">v1.0.9</span>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#binarySearch">binarySearch</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#equals">equals</a></li><li><a href="global.html#getType">getType</a></li><li><a href="global.html#getURLParameters">getURLParameters</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isNode">isNode</a></li><li><a href="global.html#isWeekend">isWeekend</a></li><li><a href="global.html#luhnCheck">luhnCheck</a></li><li><a href="global.html#union">union</a></li><li><a href="global.html#validateNumber">validateNumber</a></li></ul></div>
+</nav>
+<div id="resizer"></div>
 
-    <div id="main" class="main-content">
-      
-      <h1 id='page-title' class="page-title">
-        Global
-      </h1>
-      
-
-      
+<div class="main" id="main">
+    
 
 
 
 
 <section>
 
-
+<header>
+    
+        <h2>Global</h2>
+    
+</header>
 
 <article>
-    <div class="container-overview">
     
-        
 
-        
-
-
-
-
-
-
-        
     
-    </div>
 
     
 
@@ -133,7 +63,7 @@
 
     
 
-     
+    
 
     
 
@@ -142,20 +72,29 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="binarySearch">
             
+                <span class="type-signature"></span>binarySearch<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Number}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="algorithm_binarySearch.ts.html">algorithm/binarySearch.ts</a></code>,
+                <code><a href="algorithm_binarySearch.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="binarySearch">
-        <a href="#binarySearch">#</a>
-        <span class="type-signature"></span>binarySearch<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Number}</span>
-    </h4>
-
-    
-
-
-
     <div class="description">
         <p>使用二进制搜索算法查找排序数组中给定元素的索引。
 声明左边和右边的搜索边界 l 和 r，分别初始化为0和数组的长度。
@@ -163,19 +102,18 @@
 如果找到，则返回元素的索引，否则返回 -1。
 注意: 不考虑数组中的重复值。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -222,11 +160,40 @@
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Number</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -256,15 +223,6 @@
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="algorithm_binarySearch.ts.html">algorithm/binarySearch.ts</a>, <a href="algorithm_binarySearch.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -272,76 +230,51 @@
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Number</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="debounce">
-        <a href="#debounce">#</a>
-        <span class="type-signature"></span>debounce<span class="signature">(fn, ms)</span><span class="type-signature"></span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="debounce">
+            
+                <span class="type-signature"></span>debounce<span class="signature">(fn, ms)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="function_debounce.ts.html">function/debounce.ts</a></code>,
+                <code><a href="function_debounce.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>Creates a debounced function that delays invoking the provided function until at least ms milliseconds have elapsed since its last invocation.
 Each time the debounced function is invoked, clear the current pending timeout with clearTimeout(). Use setTimeout() to create a new timeout that delays invoking the function until at least ms milliseconds have elapsed.
 Use Function.prototype.apply() to apply the this context to the function and provide the necessary arguments.
 Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -411,11 +344,21 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
 
+    
 
+    
 
+    
 
+    
 
+    
+
+    
+
+    
 
 
 <dl class="details">
@@ -445,15 +388,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="function_debounce.ts.html">function/debounce.ts</a>, <a href="function_debounce.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -461,36 +395,33 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
+    
 
+</dd>
 
+            
+                
 
-
-
-
-
-
-
-
-
-
-
-
-
+<dt>
+    
+        <h4 class="name" id="deepClone">
+            
+                <span class="type-signature"></span>deepClone<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="object_deepClone.ts.html">object/deepClone.ts</a></code>,
+                <code><a href="object_deepClone.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
 
         
-            
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="deepClone">
-        <a href="#deepClone">#</a>
-        <span class="type-signature"></span>deepClone<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object}</span>
-    </h4>
-
-    
-
-
-
     <div class="description">
         <p>创建对象的深层克隆。克隆原语、数组和对象，但不包括类实例。
 使用递归。
@@ -499,19 +430,18 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 使用 Object.keys ()和 Array.prototype.forEach ()来确定需要深度克隆哪些键值对。
 如果对象是 Array，则将克隆的长度设置为原始的长度，并使用 arry.from ()创建克隆。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -558,11 +488,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Object</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -592,15 +551,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="object_deepClone.ts.html">object/deepClone.ts</a>, <a href="object_deepClone.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -608,57 +558,33 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="equals">
-        <a href="#equals">#</a>
-        <span class="type-signature"></span>equals<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {Boolean}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="equals">
+            
+                <span class="type-signature"></span>equals<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {Boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="type_equals.ts.html">type/equals.ts</a></code>,
+                <code><a href="type_equals.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>对两个值进行深度比较，以确定它们是否等效。检查两个值是否相同。
 使用 Date.prototype.getTime ()检查两个值是否是同时存在的 Date 对象。
@@ -667,19 +593,18 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 如果没有满足上述条件，则使用 Object.keys ()检查两个值是否具有相同的键数。
 使用 Array.prototype.every ()通过递归调用 equals ()来检查 a 中的每个键是否存在于 b 中，以及它们是否等价。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -749,11 +674,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Boolean</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -783,15 +737,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="type_equals.ts.html">type/equals.ts</a>, <a href="type_equals.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -799,75 +744,50 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Boolean</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="getType">
-        <a href="#getType">#</a>
-        <span class="type-signature"></span>getType<span class="signature">(v)</span><span class="type-signature"> &rarr; {String}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getType">
+            
+                <span class="type-signature"></span>getType<span class="signature">(v)</span><span class="type-signature"> &rarr; {String}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="type_getType.ts.html">type/getType.ts</a></code>,
+                <code><a href="type_getType.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>返回值的原始类型。
 如果值未定义或为空，则返回“ undefined”或“ null”。
 否则，使用 Object.prototype.constructor 和 function.prototype.name 获取构造函数的名称。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -914,11 +834,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -948,15 +897,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="type_getType.ts.html">type/getType.ts</a>, <a href="type_getType.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -964,76 +904,51 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="getURLParameters">
-        <a href="#getURLParameters">#</a>
-        <span class="type-signature"></span>getURLParameters<span class="signature">(url)</span><span class="type-signature"> &rarr; {object}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getURLParameters">
+            
+                <span class="type-signature"></span>getURLParameters<span class="signature">(url)</span><span class="type-signature"> &rarr; {object}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="browser_getURLParameters.ts.html">browser/getURLParameters.ts</a></code>,
+                <code><a href="browser_getURLParameters.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>创建一个包含当前 URL 参数的对象。
 使用 String.prototype.match ()和适当的正则表达式来获取所有键值对。
 使用 Array.prototype.reduce ()将它们映射并组合成单个对象。
 将 location.search 作为参数应用于当前 url。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -1080,11 +995,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">object</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -1114,15 +1058,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="browser_getURLParameters.ts.html">browser/getURLParameters.ts</a>, <a href="browser_getURLParameters.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -1130,76 +1065,51 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">object</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="hexToRGB">
-        <a href="#hexToRGB">#</a>
-        <span class="type-signature"></span>hexToRGB<span class="signature">(hex)</span><span class="type-signature"> &rarr; {string}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="hexToRGB">
+            
+                <span class="type-signature"></span>hexToRGB<span class="signature">(hex)</span><span class="type-signature"> &rarr; {string}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="string_hexToRGB.ts.html">string/hexToRGB.ts</a></code>,
+                <code><a href="string_hexToRGB.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>如果提供了 alpha 值，则将颜色代码转换为 rgb ()或 rgba ()字符串。
 使用按位右移运算符和带 &amp; (和)运算符的掩码位将十六进制颜色代码(带或不带 # 前缀)转换为带 RGB 值的字符串。
 如果是3位数字的颜色代码，首先转换为6位数字的版本。
 如果在6位十六进制数字旁边提供了 alpha 值，则返回 rgba ()字符串。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -1246,11 +1156,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">string</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -1280,15 +1219,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="string_hexToRGB.ts.html">string/hexToRGB.ts</a>, <a href="string_hexToRGB.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -1296,73 +1226,48 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="isEmpty">
-        <a href="#isEmpty">#</a>
-        <span class="type-signature"></span>isEmpty<span class="signature">(a)</span><span class="type-signature"> &rarr; {Boolean}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isEmpty">
+            
+                <span class="type-signature"></span>isEmpty<span class="signature">(a)</span><span class="type-signature"> &rarr; {Boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="type_isEmpty.ts.html">type/isEmpty.ts</a></code>,
+                <code><a href="type_isEmpty.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>Checks if the a value is an empty object/collection, has no enumerable properties or is any type that is not considered a collection.</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -1409,11 +1314,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Boolean</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -1443,15 +1377,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="type_isEmpty.ts.html">type/isEmpty.ts</a>, <a href="type_isEmpty.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -1459,62 +1384,67 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Boolean</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="isNode">
-        <a href="#isNode">#</a>
-        <span class="type-signature"></span>isNode<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isNode">
+            
+                <span class="type-signature"></span>isNode<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="node_isNode.ts.html">node/isNode.ts</a></code>,
+                <code><a href="node_isNode.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>确定当前的执行期函式库是否是 Node.js。
 使用提供当前 Node.js 进程信息的进程全局对象。
 检查是否定义了 process、 process.versions 和 process.versions.node。</p>
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
 
 
 
@@ -1523,11 +1453,11 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 
 
 
+            
+    </div>
+    
 
-
-
-
-
+    
 
 
 <dl class="details">
@@ -1557,15 +1487,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="node_isNode.ts.html">node/isNode.ts</a>, <a href="node_isNode.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -1573,75 +1494,50 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="isWeekend">
-        <a href="#isWeekend">#</a>
-        <span class="type-signature"></span>isWeekend<span class="signature">(d)</span><span class="type-signature"> &rarr; {boolean}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isWeekend">
+            
+                <span class="type-signature"></span>isWeekend<span class="signature">(d)</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="date_isWeekend.ts.html">date/isWeekend.ts</a></code>,
+                <code><a href="date_isWeekend.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>检查给定的日期是否为周末。
 使用 Date.prototype.getDay ()通过使用模运算符(%)检查周末。
 省略参数 d，以使用当前日期作为默认值。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -1688,11 +1584,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -1722,15 +1647,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="date_isWeekend.ts.html">date/isWeekend.ts</a>, <a href="date_isWeekend.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -1738,57 +1654,33 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="luhnCheck">
-        <a href="#luhnCheck">#</a>
-        <span class="type-signature"></span>luhnCheck<span class="signature">(num)</span><span class="type-signature"> &rarr; {Boolean}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="luhnCheck">
+            
+                <span class="type-signature"></span>luhnCheck<span class="signature">(num)</span><span class="type-signature"> &rarr; {Boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="algorithm_luhnCheck.ts.html">algorithm/luhnCheck.ts</a></code>,
+                <code><a href="algorithm_luhnCheck.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>实现 Luhn 算法，用于验证各种识别号码，如信用卡号码，IMEI 号码，国家提供商标识号码等。
 使用 String.prototype.split ()、 arry.prototype.reverse ()和 arry.prototype.map ()与 parseInt ()结合获得数字数组。
@@ -1796,19 +1688,18 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 使用 ary.prototype.reduce ()实现 Luhn 算法。
 如果和能被10整除，返回 true，否则返回 false。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -1855,11 +1746,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Boolean</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -1889,15 +1809,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="algorithm_luhnCheck.ts.html">algorithm/luhnCheck.ts</a>, <a href="algorithm_luhnCheck.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -1905,74 +1816,49 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Boolean</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="union">
-        <a href="#union">#</a>
-        <span class="type-signature"></span>union<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {Array}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="union">
+            
+                <span class="type-signature"></span>union<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {Array}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="array_union.ts.html">array/union.ts</a></code>,
+                <code><a href="array_union.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>对返回两个数组中至少存在一次的每个元素。
 用 a 和 b 的所有值创建一个 Set，并将其转换为数组。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -2042,11 +1928,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Array</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -2076,15 +1991,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="array_union.ts.html">array/union.ts</a>, <a href="array_union.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -2092,57 +1998,33 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
-            
-
     
 
-    <h4 class="name" id="validateNumber">
-        <a href="#validateNumber">#</a>
-        <span class="type-signature"></span>validateNumber<span class="signature">(n)</span><span class="type-signature"> &rarr; {boolean}</span>
-    </h4>
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="validateNumber">
+            
+                <span class="type-signature"></span>validateNumber<span class="signature">(n)</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="math_validateNumber.ts.html">math/validateNumber.ts</a></code>,
+                <code><a href="math_validateNumber.ts.html#line1">line 1</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
 
     
-
-
-
     <div class="description">
         <p>检查给定值是否是一个数字。
 使用 parseFloat ()尝试将 n 转换为一个数字。
@@ -2150,19 +2032,18 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 使用 Number.isFinite ()检查 num 是否是有限的。
 使用 Number ()和松散的相等运算符(= =)检查强制是否成立。</p>
     </div>
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
         
-
 <table class="params">
     <thead>
     <tr>
@@ -2209,11 +2090,40 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </table>
 
     </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
 
 
 
 
 
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -2243,15 +2153,6 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
     
 
     
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="math_validateNumber.ts.html">math/validateNumber.ts</a>, <a href="math_validateNumber.ts.html#line1">line 1</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
 
     
 
@@ -2259,44 +2160,11 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 </dl>
 
 
+    
 
+</dd>
 
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-            
-    </div>
-
-
-
-
-        
+            </dl>
     
 
     
@@ -2309,39 +2177,26 @@ Omit the second argument, ms, to set the timeout at a default of 0 ms.</p>
 
 
 
-    </div>
+</div>
 
-    <footer class="footer" id="footer">
-      
-    </footer>
+<footer>
+    <img class="logo" src="img/toast-ui.png" style="">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
 
-    <script src="scripts/third-party/prettify.js"></script>
-    <script src="scripts/third-party/lang-css.js"></script>
-    <script type="text/javascript" src="scripts/misc.js"></script>
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
 
-    <script>prettyPrint();</script>
-    <script src="scripts/linenumber.js"></script>
-    <script src="scripts/fix-code-block.js"></script>
-    <script src="scripts/fix-navbar.js"></script>
-    
-      <script src="scripts/search.js"></script>
-      <script src="scripts/third-party/fuse.js"></script>
-      <script>
-        var list = [{"title":"binarySearch","link":"<a href=\"global.html#binarySearch\">binarySearch</a>"},{"title":"debounce","link":"<a href=\"global.html#debounce\">debounce</a>"},{"title":"deepClone","link":"<a href=\"global.html#deepClone\">deepClone</a>"},{"title":"equals","link":"<a href=\"global.html#equals\">equals</a>"},{"title":"getType","link":"<a href=\"global.html#getType\">getType</a>"},{"title":"getURLParameters","link":"<a href=\"global.html#getURLParameters\">getURLParameters</a>"},{"title":"hexToRGB","link":"<a href=\"global.html#hexToRGB\">hexToRGB</a>"},{"title":"isEmpty","link":"<a href=\"global.html#isEmpty\">isEmpty</a>"},{"title":"isNode","link":"<a href=\"global.html#isNode\">isNode</a>"},{"title":"isWeekend","link":"<a href=\"global.html#isWeekend\">isWeekend</a>"},{"title":"luhnCheck","link":"<a href=\"global.html#luhnCheck\">luhnCheck</a>"},{"title":"union","link":"<a href=\"global.html#union\">union</a>"},{"title":"validateNumber","link":"<a href=\"global.html#validateNumber\">validateNumber</a>"}];
-        var options = 
-          setupSearch(list, options)
-      </script>
-    
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
 
-    
-
-    
-
-    
-
-    
-
-
-  </body>
-
+</body>
 </html>
