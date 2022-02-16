@@ -2,8 +2,8 @@
   <h1>utilmax</h1>
 </div>
 
-  [![build](https://github.com/marsczen/utilmax/actions/workflows/ci.yml/badge.svg)](https://github.com/marsczen/utilmax/actions/workflows/ci.yml)
-  [![release](https://img.shields.io/github/v/release/marsczen/utilmax.svg)](https://img.shields.io/github/v/release/marsczen/utilmax.svg)
+  [![test](https://github.com/marsczen/utilmax/actions/workflows/ci.yml/badge.svg)](https://github.com/marsczen/utilmax/actions/workflows/ci.yml)
+  [![npm](https://img.shields.io/github/v/release/marsczen/utilmax.svg)](https://www.npmjs.com/package/utilmax)
   [![commit](https://img.shields.io/github/last-commit/marsczen/utilmax.svg?style=popout)](https://img.shields.io/github/last-commit/marsczen/utilmax.svg?style=popout)
 
 
