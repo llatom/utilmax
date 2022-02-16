@@ -9,7 +9,7 @@
   "scripts": {
     "doc": "jsdoc -c jsdoc.json",
     "build": "rimraf lib && node ./build.js",
-    "deploy": "gh-pages -d docs/utilmax/$npm_package_version",
+    "deploy": "gh-pages -d docs",
     "test": "jest"
   },
   "repository": {
