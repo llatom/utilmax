@@ -28,6 +28,9 @@ jobs:
 
     - name: Run tests
       run: yarn test
+    
+    - name: JSDoc Action
+      uses: andstor/jsdoc-action@v1.2.0
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1

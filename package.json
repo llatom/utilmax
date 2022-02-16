@@ -2,7 +2,7 @@
   "name": "utilmax",
   "version": "1.1.0",
   "description": "🐝 utilmax is a small and useful utils library for JavaScript.",
-  "main": "lib/index.js",
+  "main": "lib/utilmax.min.js",
   "files": [
     "lib/"
   ],
