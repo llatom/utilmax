@@ -31,7 +31,7 @@
 
 
     <title>
-      Home
+      algorithm/luhnCheck.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -97,51 +97,49 @@
 
     <div id="main" class="main-content">
       
+      <h1 id='page-title' class="page-title">
+        algorithm/luhnCheck.ts
+      </h1>
+      
 
       
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc
+ * 实现 Luhn 算法，用于验证各种识别号码，如信用卡号码，IMEI 号码，国家提供商标识号码等。
+ * 使用 String.prototype.split ()、 arry.prototype.reverse ()和 arry.prototype.map ()与 parseInt ()结合获得数字数组。
+ * 使用 ary.prototype.shift ()获得最后一位数。
+ * 使用 ary.prototype.reduce ()实现 Luhn 算法。
+ * 如果和能被10整除，返回 true，否则返回 false。
+ * @param  {String} num
+ * @return {Boolean}
+ */
 
+const luhnCheck = (num) => {
+  const arr = (num + "")
+    .split("")
+    .reverse()
+    .map((x) => parseInt(x));
+  const lastDigit = arr.shift() as number;
+  let sum = arr.reduce(
+    (acc, val, i) =>
+      i % 2 !== 0 ? acc + val : acc + ((val *= 2) > 9 ? val - 9 : val),
+    0
+  );
+  sum += lastDigit;
+  return sum % 10 === 0;
+};
 
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><div align="center">
-  <h1>utilmax</h1>
-</div>
-<p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
-</p>
-<blockquote>
-<p>通用js方法库</p>
-</blockquote>
-<h3>Installation:</h3>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save utilmax
+export default luhnCheck;
 </code></pre>
-<h3>Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import * as utilmax from &quot;utilmax&quot;;
-const env = utilmax.getEnvironment();
-</code></pre>
-<blockquote>
-<p>通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：</p>
-</blockquote>
-<pre class="prettyprint source lang-javascript"><code>import { getEnvironment } from &quot;utilmax&quot;;
-const env = getEnvironment();
-</code></pre></article>
+        </article>
     </section>
-
-
 
 
 

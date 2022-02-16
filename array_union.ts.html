@@ -31,7 +31,7 @@
 
 
     <title>
-      Home
+      array/union.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -97,51 +97,35 @@
 
     <div id="main" class="main-content">
       
+      <h1 id='page-title' class="page-title">
+        array/union.ts
+      </h1>
+      
 
       
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc
+ * 对返回两个数组中至少存在一次的每个元素。
+ * 用 a 和 b 的所有值创建一个 Set，并将其转换为数组。
+ * @param {Array} a
+ * @param {Array} b
+ * @return {Array}
+ */
 
+  
+ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><div align="center">
-  <h1>utilmax</h1>
-</div>
-<p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
-</p>
-<blockquote>
-<p>通用js方法库</p>
-</blockquote>
-<h3>Installation:</h3>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save utilmax
-</code></pre>
-<h3>Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import * as utilmax from &quot;utilmax&quot;;
-const env = utilmax.getEnvironment();
-</code></pre>
-<blockquote>
-<p>通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：</p>
-</blockquote>
-<pre class="prettyprint source lang-javascript"><code>import { getEnvironment } from &quot;utilmax&quot;;
-const env = getEnvironment();
-</code></pre></article>
+export default union
+  </code></pre>
+        </article>
     </section>
-
-
 
 
 

@@ -31,7 +31,7 @@
 
 
     <title>
-      Home
+      node/isNode.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -97,51 +97,36 @@
 
     <div id="main" class="main-content">
       
+      <h1 id='page-title' class="page-title">
+        node/isNode.ts
+      </h1>
+      
 
       
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc
+ * 确定当前的执行期函式库是否是 Node.js。
+ * 使用提供当前 Node.js 进程信息的进程全局对象。
+ * 检查是否定义了 process、 process.versions 和 process.versions.node。
+ * @return {boolean}
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><div align="center">
-  <h1>utilmax</h1>
-</div>
-<p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
-</p>
-<blockquote>
-<p>通用js方法库</p>
-</blockquote>
-<h3>Installation:</h3>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save utilmax
-</code></pre>
-<h3>Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import * as utilmax from &quot;utilmax&quot;;
-const env = utilmax.getEnvironment();
-</code></pre>
-<blockquote>
-<p>通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：</p>
-</blockquote>
-<pre class="prettyprint source lang-javascript"><code>import { getEnvironment } from &quot;utilmax&quot;;
-const env = getEnvironment();
-</code></pre></article>
+ const isNode = () =>
+ typeof process !== 'undefined' &amp;&amp;
+ !!process.versions &amp;&amp;
+ !!process.versions.node;
+  
+  export default isNode;
+  </code></pre>
+        </article>
     </section>
-
-
 
 
 

@@ -31,7 +31,7 @@
 
 
     <title>
-      Home
+      type/isEmpty.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -97,51 +97,33 @@
 
     <div id="main" class="main-content">
       
+      <h1 id='page-title' class="page-title">
+        type/isEmpty.ts
+      </h1>
+      
 
       
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc
+ * Checks if the a value is an empty object/collection, has no enumerable properties or is any type that is not considered a collection.
+ * @param {any} a
+ * @return {Boolean}
+ */
 
+  
+ const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><div align="center">
-  <h1>utilmax</h1>
-</div>
-<p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
-</p>
-<blockquote>
-<p>通用js方法库</p>
-</blockquote>
-<h3>Installation:</h3>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save utilmax
-</code></pre>
-<h3>Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import * as utilmax from &quot;utilmax&quot;;
-const env = utilmax.getEnvironment();
-</code></pre>
-<blockquote>
-<p>通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：</p>
-</blockquote>
-<pre class="prettyprint source lang-javascript"><code>import { getEnvironment } from &quot;utilmax&quot;;
-const env = getEnvironment();
-</code></pre></article>
+ export default isEmpty
+  </code></pre>
+        </article>
     </section>
-
-
 
 
 

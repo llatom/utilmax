@@ -31,7 +31,7 @@
 
 
     <title>
-      Home
+      string/hexToRGB.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -97,51 +97,54 @@
 
     <div id="main" class="main-content">
       
+      <h1 id='page-title' class="page-title">
+        string/hexToRGB.ts
+      </h1>
+      
 
       
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc
+ * 如果提供了 alpha 值，则将颜色代码转换为 rgb ()或 rgba ()字符串。
+ * 使用按位右移运算符和带 &amp; (和)运算符的掩码位将十六进制颜色代码(带或不带 # 前缀)转换为带 RGB 值的字符串。
+ * 如果是3位数字的颜色代码，首先转换为6位数字的版本。
+ * 如果在6位十六进制数字旁边提供了 alpha 值，则返回 rgba ()字符串。
+ * @param {string} hex
+ * @return {string}
+ */
 
+  
+ const hexToRGB = hex => {
+    let alpha = false,
+      h = hex.slice(hex.startsWith('#') ? 1 : 0);
+    if (h.length === 3) h = [...h].map(x => x + x).join('');
+    else if (h.length === 8) alpha = true;
+    h = parseInt(h, 16);
+    return (
+      'rgb' +
+      (alpha ? 'a' : '') +
+      '(' +
+      (h >>> (alpha ? 24 : 16)) +
+      ', ' +
+      ((h &amp; (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) +
+      ', ' +
+      ((h &amp; (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +
+      (alpha ? `, ${h &amp; 0x000000ff}` : '') +
+      ')'
+    );
+  };
 
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><div align="center">
-  <h1>utilmax</h1>
-</div>
-<p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
-</p>
-<blockquote>
-<p>通用js方法库</p>
-</blockquote>
-<h3>Installation:</h3>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save utilmax
-</code></pre>
-<h3>Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import * as utilmax from &quot;utilmax&quot;;
-const env = utilmax.getEnvironment();
-</code></pre>
-<blockquote>
-<p>通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：</p>
-</blockquote>
-<pre class="prettyprint source lang-javascript"><code>import { getEnvironment } from &quot;utilmax&quot;;
-const env = getEnvironment();
-</code></pre></article>
+export default hexToRGB
+  </code></pre>
+        </article>
     </section>
-
-
 
 
 

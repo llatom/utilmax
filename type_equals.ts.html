@@ -31,7 +31,7 @@
 
 
     <title>
-      Home
+      type/equals.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -97,51 +97,49 @@
 
     <div id="main" class="main-content">
       
+      <h1 id='page-title' class="page-title">
+        type/equals.ts
+      </h1>
+      
 
       
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc
+ * 对两个值进行深度比较，以确定它们是否等效。检查两个值是否相同。
+ * 使用 Date.prototype.getTime ()检查两个值是否是同时存在的 Date 对象。
+ * 检查两个值是否都是具有等效值的非对象值(严格比较)。
+ * 检查是否只有一个值为空或未定义，或者它们的原型是否不同。
+ * 如果没有满足上述条件，则使用 Object.keys ()检查两个值是否具有相同的键数。
+ * 使用 Array.prototype.every ()通过递归调用 equals ()来检查 a 中的每个键是否存在于 b 中，以及它们是否等价。
+ * @param {any} a
+ * @param {any} b
+ * @return {Boolean}
+ */
 
+  
+const equals = (a, b) => {
+    if (a === b) return true;
+    if (a instanceof Date &amp;&amp; b instanceof Date)
+      return a.getTime() === b.getTime();
+    if (!a || !b || (typeof a !== 'object' &amp;&amp; typeof b !== 'object'))
+      return a === b;
+    if (a.prototype !== b.prototype) return false;
+    const keys = Object.keys(a);
+    if (keys.length !== Object.keys(b).length) return false;
+    return keys.every(k => equals(a[k], b[k]));
+  };
 
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><div align="center">
-  <h1>utilmax</h1>
-</div>
-<p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
-</p>
-<blockquote>
-<p>通用js方法库</p>
-</blockquote>
-<h3>Installation:</h3>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save utilmax
-</code></pre>
-<h3>Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import * as utilmax from &quot;utilmax&quot;;
-const env = utilmax.getEnvironment();
-</code></pre>
-<blockquote>
-<p>通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：</p>
-</blockquote>
-<pre class="prettyprint source lang-javascript"><code>import { getEnvironment } from &quot;utilmax&quot;;
-const env = getEnvironment();
-</code></pre></article>
+  export default equals
+  </code></pre>
+        </article>
     </section>
-
-
 
 
 

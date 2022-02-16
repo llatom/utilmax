@@ -31,7 +31,7 @@
 
 
     <title>
-      Home
+      math/validateNumber.ts
     </title>
 
     <!--[if lt IE 9]>
@@ -97,51 +97,39 @@
 
     <div id="main" class="main-content">
       
+      <h1 id='page-title' class="page-title">
+        math/validateNumber.ts
+      </h1>
+      
 
       
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @desc
+ * 检查给定值是否是一个数字。
+ * 使用 parseFloat ()尝试将 n 转换为一个数字。
+ * 使用 Number.isNaN ()和 logicalnot (!)运算符检查 num 是否是一个数字。
+ * 使用 Number.isFinite ()检查 num 是否是有限的。
+ * 使用 Number ()和松散的相等运算符(= =)检查强制是否成立。
+ * @param {any} n
+ * @return {boolean}
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><div align="center">
-  <h1>utilmax</h1>
-</div>
-<p>
-  <img alt="Version" src="https://img.shields.io/github/v/release/metaczen/utilmax.svg" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/metaczen/utilmax.svg?style=popout" />
-</p>
-<blockquote>
-<p>通用js方法库</p>
-</blockquote>
-<h3>Installation:</h3>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save utilmax
-</code></pre>
-<h3>Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import * as utilmax from &quot;utilmax&quot;;
-const env = utilmax.getEnvironment();
-</code></pre>
-<blockquote>
-<p>通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：</p>
-</blockquote>
-<pre class="prettyprint source lang-javascript"><code>import { getEnvironment } from &quot;utilmax&quot;;
-const env = getEnvironment();
-</code></pre></article>
+ const validateNumber = n => {
+    const num = parseFloat(n);
+    return !Number.isNaN(num) &amp;&amp; Number.isFinite(num) &amp;&amp; Number(n) == n;
+  }
+  
+  export default validateNumber;
+  </code></pre>
+        </article>
     </section>
-
-
 
 
 
