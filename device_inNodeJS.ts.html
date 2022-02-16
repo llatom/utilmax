@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: algorithm/luhnCheck.ts | utilmax</title>
+    <title>Source: device/inNodeJS.ts | utilmax</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -48,34 +48,24 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- *
- * @desc
- * 实现 Luhn 算法，用于验证各种识别号码，如信用卡号码，IMEI 号码，国家提供商标识号码等。
- * 使用 String.prototype.split ()、 arry.prototype.reverse ()和 arry.prototype.map ()与 parseInt ()结合获得数字数组。
- * 使用 ary.prototype.shift ()获得最后一位数。
- * 使用 ary.prototype.reduce ()实现 Luhn 算法。
- * 如果和能被10整除，返回 true，否则返回 false。
- * @param  {String} num
- * @return {Boolean}
+            <pre class="prettyprint source linenums"><code>let yes!: boolean
+
+/**
+ * 检查是否在 Node.js 中。
+ * @returns 是否在 Node.js 中。
  */
+const inNodeJS = () => {
+  if (yes == null) {
+    yes =
+      typeof global === 'object' &amp;&amp;
+      typeof global['process'] === 'object' &amp;&amp;
+      typeof global['process']['versions'] === 'object' &amp;&amp;
+      global['process']['versions']['node'] != null
+  }
+  return yes
+}
 
-const luhnCheck = (num) => {
-  const arr = (num + "")
-    .split("")
-    .reverse()
-    .map((x) => parseInt(x));
-  const lastDigit = arr.shift() as number;
-  let sum = arr.reduce(
-    (acc, val, i) =>
-      i % 2 !== 0 ? acc + val : acc + ((val *= 2) > 9 ? val - 9 : val),
-    0
-  );
-  sum += lastDigit;
-  return sum % 10 === 0;
-};
-
-export default luhnCheck;
+export default inNodeJS
 </code></pre>
         </article>
     </section>
