@@ -1,3 +1,4 @@
+export {}
 const utilmax = require("../src");
 
 describe("type", () => {

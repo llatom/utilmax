@@ -14,18 +14,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/metaczen/utilmax.git"
+    "url": "git+ssh://git@github.com/marsczen/utilmax.git"
   },
   "keywords": [
     "utils",
     "esbuild"
   ],
-  "author": "metaczen",
+  "author": "marsczen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/metaczen/utilmax/issues"
+    "url": "https://github.com/marsczen/utilmax/issues"
   },
-  "homepage": "https://github.com/metaczen/utilmax#readme",
+  "homepage": "https://github.com/marsczen/utilmax#readme",
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.16.0",

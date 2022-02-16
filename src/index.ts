@@ -5,4 +5,12 @@
  */
 
 export * from './algorithm'
+export * from './array'
+export * from './browser'
+export * from './date'
+export * from './math'
+export * from './node'
+export * from './function'
+export * from './object'
 export * from './type'
+export * from './string'
