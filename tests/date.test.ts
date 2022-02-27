@@ -9,7 +9,8 @@ describe("type", () => {
     expect(utilmax.getDaysDiffBetweenDates(new Date(2019, 0, 1), new Date(2019, 0, 2))).toBe(1);
   })
   test("JSONToDate()", () => {
-    expect(utilmax.JSONToDate(/Date(1489525200000)/)).toBe("15/3/2017");
+    expect(utilmax.JSONToDate(/Date(1489525200000)/)).toEqual("14/3/2017");
+
   })
 })
 
