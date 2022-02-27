@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: type/equals.ts | utilmax</title>
+    <title>Source: array/group-by.ts | utilmax</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -51,31 +51,19 @@
             <pre class="prettyprint source linenums"><code>/**
  *
  * @desc
- * 对两个值进行深度比较，以确定它们是否等效。检查两个值是否相同。
- * 使用 Date.prototype.getTime ()检查两个值是否是同时存在的 Date 对象。
- * 检查两个值是否都是具有等效值的非对象值(严格比较)。
- * 检查是否只有一个值为空或未定义，或者它们的原型是否不同。
- * 如果没有满足上述条件，则使用 Object.keys ()检查两个值是否具有相同的键数。
- * 使用 Array.prototype.every ()通过递归调用 equals ()来检查 a 中的每个键是否存在于 b 中，以及它们是否等价。
- * @param {any} a
- * @param {any} b
- * @return {Boolean}
+ * 根据给定函数对数组元素进行分组。
+ * 使用Array.map()将数组的值映射到函数或属性名。使用Array.reduce()创建一个对象, 其中的键是从映射的结果生成的。
+ * @param {Array} arr
+ * @param {Function} func
+ * @return {Object}
  */
 
   
-const equals = (a, b) => {
-    if (a === b) return true;
-    if (a instanceof Date &amp;&amp; b instanceof Date)
-      return a.getTime() === b.getTime();
-    if (!a || !b || (typeof a !== 'object' &amp;&amp; typeof b !== 'object'))
-      return a === b;
-    if (a.prototype !== b.prototype) return false;
-    const keys = Object.keys(a);
-    if (keys.length !== Object.keys(b).length) return false;
-    return keys.every(k => equals(a[k], b[k]));
-  };
+ const groupBy = (arr, func) =>
+ arr.map(typeof func === 'function' ? func : val => val[func])
+ .reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
 
-  export default equals
+export default groupBy
   </code></pre>
         </article>
     </section>
