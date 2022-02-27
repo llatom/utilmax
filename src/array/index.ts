@@ -1,1 +1,5 @@
 export { default as union} from './union'
+export { default as deepFlatten} from './deepFlatten'
+export { default as difference} from './difference'
+export { default as flatten} from './flatten'
+export { default as groupBy} from './groupBy'

@@ -9,16 +9,6 @@
  * @param {Number} ms
  */
 
-  
-//  const debounce = (fn, ms = 0) => {
-//     let timeoutId;
-//     return function(...args) {
-//       clearTimeout(timeoutId);
-//       timeoutId = setTimeout(() => fn.apply(this, args), ms);
-//     };
-//   };
-
-
   const debounce = (fn: { apply: (arg0: any, arg1: any) => void }, t: number) => {
     let timeId: any = null
     const delay = t || 500
