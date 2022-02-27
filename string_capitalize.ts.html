@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: browser/getURLParameters.ts | utilmax</title>
+    <title>Source: string/capitalize.ts | utilmax</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -51,24 +51,18 @@
             <pre class="prettyprint source linenums"><code>/**
  *
  * @desc
- * 创建一个包含当前 URL 参数的对象。
- * 使用 String.prototype.match ()和适当的正则表达式来获取所有键值对。
- * 使用 Array.prototype.reduce ()将它们映射并组合成单个对象。
- * 将 location.search 作为参数应用于当前 url。
- * @param {string} url
- * @return {object}
+ * 将字符串的第一个字母大写。
+ * 使用 destructuring 和toUpperCase()可将第一个字母、...rest用于获取第一个字母之后的字符数组, 然后是Array.join('')以使其成为字符串。省略lowerRest参数以保持字符串的其余部分不变, 或将其设置为true以转换为小写。
+ * @param {string} str
+ * @param {boolean} lowerRest
+ * @return {string}
  */
 
   
- const getURLParameters = url =>
- (url.match(/([^?=&amp;]+)(=([^&amp;]*))/g) || []).reduce(
-   (a, v) => (
-     (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a
-   ),
-   {}
- );
+ const capitalize = ([first,...rest], lowerRest = false) =>
+ first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 
-export default getURLParameters
+export default capitalize
   </code></pre>
         </article>
     </section>

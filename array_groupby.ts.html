@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: browser/getURLParameters.ts | utilmax</title>
+    <title>Source: array/groupby.ts | utilmax</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -51,24 +51,19 @@
             <pre class="prettyprint source linenums"><code>/**
  *
  * @desc
- * 创建一个包含当前 URL 参数的对象。
- * 使用 String.prototype.match ()和适当的正则表达式来获取所有键值对。
- * 使用 Array.prototype.reduce ()将它们映射并组合成单个对象。
- * 将 location.search 作为参数应用于当前 url。
- * @param {string} url
- * @return {object}
+ * 根据给定函数对数组元素进行分组。
+ * 使用Array.map()将数组的值映射到函数或属性名。使用Array.reduce()创建一个对象, 其中的键是从映射的结果生成的。
+ * @param {Array} arr
+ * @param {Function} func
+ * @return {Object}
  */
 
   
- const getURLParameters = url =>
- (url.match(/([^?=&amp;]+)(=([^&amp;]*))/g) || []).reduce(
-   (a, v) => (
-     (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a
-   ),
-   {}
- );
+ const groupBy = (arr, func) =>
+ arr.map(typeof func === 'function' ? func : val => val[func])
+ .reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
 
-export default getURLParameters
+export default groupBy
   </code></pre>
         </article>
     </section>

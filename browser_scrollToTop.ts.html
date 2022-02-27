@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: browser/getURLParameters.ts | utilmax</title>
+    <title>Source: browser/scrollToTop.ts | utilmax</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -51,24 +51,20 @@
             <pre class="prettyprint source linenums"><code>/**
  *
  * @desc
- * 创建一个包含当前 URL 参数的对象。
- * 使用 String.prototype.match ()和适当的正则表达式来获取所有键值对。
- * 使用 Array.prototype.reduce ()将它们映射并组合成单个对象。
- * 将 location.search 作为参数应用于当前 url。
- * @param {string} url
- * @return {object}
+ * 平滑滚动到页面顶部。
+ * 使用document.documentElement.scrollTop或document.body.scrollTop从顶部获取距离。从顶部的距离的一小部分滚动。使用window.requestAnimationFrame()对滚动进行动画处理。
  */
 
   
- const getURLParameters = url =>
- (url.match(/([^?=&amp;]+)(=([^&amp;]*))/g) || []).reduce(
-   (a, v) => (
-     (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a
-   ),
-   {}
- );
-
-export default getURLParameters
+ const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+    }
+    };
+ 
+export default scrollToTop
   </code></pre>
         </article>
     </section>
