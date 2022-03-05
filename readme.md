@@ -24,7 +24,7 @@ const env = utilmax.getEnvironment();
 ```
 
 
-> In general, you don't need to introduce all of them, so just add the methods you need, e.g.：
+> In general, you don't need to introduce all of them, so just add the methods you need, e.g.
 
 ```javascript
 import { getEnvironment } from "utilmax";
