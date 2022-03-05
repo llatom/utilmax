@@ -8,7 +8,7 @@
   [![commit](https://img.shields.io/github/last-commit/marsczen/utilmax.svg?style=popout)](https://img.shields.io/github/last-commit/marsczen/utilmax.svg?style=popout)
 
 
-> 通用js方法库
+> 🐝 utilmax is a tiny utils library for JavaScript
 
 ### Installation:
 
@@ -24,7 +24,7 @@ const env = utilmax.getEnvironment();
 ```
 
 
-> 通常情况并不需要全量引入，所以仅添加需要的方法即可，如下：
+> In general, you don't need to introduce all of them, so just add the methods you need, e.g.：
 
 ```javascript
 import { getEnvironment } from "utilmax";
